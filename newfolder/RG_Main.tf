@@ -1,3 +1,16 @@
+terraform {
+    required_providers {
+         azurerm = {
+                    source = "hashicorp/azurerm"
+                    version = "=2.71.0"
+                    }
+                        }
+}
+
+provider "azurerm" {
+    features{}
+}
+
 #code for resource group
 resource "azurerm_resource_group" "RG" {
     count    = length(var.RG_Name)
